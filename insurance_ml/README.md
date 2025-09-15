@@ -87,8 +87,27 @@ After running the pipeline, you'll find:
 - Model evaluation results in `model_evaluation_results.csv`
 - Trained models saved as pickle files for future use
 
+## Web Interface
+
+The project includes a user-friendly web interface that allows users to:
+
+- Enter their personal information (age, sex, BMI, etc.)
+- Select a prediction model
+- Get an estimated insurance cost
+- View factors that affect their insurance cost
+
+## API Endpoints
+
+The Flask API provides the following endpoints:
+
+- `GET /api/models` - List all available trained models
+- `POST /api/predict` - Make a prediction based on input data
+  - Required JSON payload: `age`, `sex`, `bmi`, `children`, `smoker`, `region`
+  - Optional parameter: `model_name` (defaults to 'gradient_boosting')
+
 ## Next Steps
 
 - Feature engineering to improve model performance
 - Hyperparameter tuning for better accuracy
-- Creating a web interface for making predictions
+- Add visualization of feature importance in the frontend
+- Implement user accounts for saving predictions
