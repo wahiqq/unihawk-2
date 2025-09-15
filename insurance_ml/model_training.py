@@ -31,7 +31,7 @@ def train_models(X_train, y_train):
         model.fit(X_train, y_train)
         
         # Save the trained model
-        joblib.dump(model, f'insurance_ml/{name.lower().replace(" ", "_")}.pkl')
+        joblib.dump(model, f'{name.lower().replace(" ", "_")}.pkl')
         print(f"{name} trained and saved successfully.")
     
     return models
@@ -67,7 +67,7 @@ def evaluate_models(models, X_test, y_test):
     print(results_df)
     
     # Save results to CSV
-    results_df.to_csv('insurance_ml/model_evaluation_results.csv', index=False)
+    results_df.to_csv('model_evaluation_results.csv', index=False)
     
     # Find best model based on RMSE
     best_model_idx = results_df['RMSE'].idxmin()

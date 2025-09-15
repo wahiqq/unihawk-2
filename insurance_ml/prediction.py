@@ -19,7 +19,7 @@ def load_model(model_name='gradient_boosting'):
     Returns:
     Trained model object
     """
-    model_path = Path(f'insurance_ml/{model_name}.pkl')
+    model_path = Path(f'{model_name}.pkl')
     if not model_path.exists():
         raise FileNotFoundError(f"Model file {model_path} not found!")
     
@@ -33,7 +33,7 @@ def load_preprocessor():
     Returns:
     Trained preprocessor object
     """
-    preprocessor_path = Path('insurance_ml/preprocessor.pkl')
+    preprocessor_path = Path('preprocessor.pkl')
     if not preprocessor_path.exists():
         raise FileNotFoundError(f"Preprocessor file {preprocessor_path} not found!")
     

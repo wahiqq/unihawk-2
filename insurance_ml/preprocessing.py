@@ -52,7 +52,7 @@ def preprocess_data(df, test_size=0.2, random_state=42):
     X_test_processed = preprocessor.transform(X_test)
     
     # Save the preprocessor
-    joblib.dump(preprocessor, 'insurance_ml/preprocessor.pkl')
+    joblib.dump(preprocessor, 'preprocessor.pkl')
     
     # Get feature names after one-hot encoding
     ohe = preprocessor.named_transformers_['cat']
