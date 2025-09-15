@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Cost Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Insurance Cost Predictor</h1>
+            <p class="subtitle">Predict your health insurance cost based on personal factors</p>
+        </header>
+
+        <main>
+            <section class="input-panel">
+                <h2>Enter Your Details</h2>
+                <form id="prediction-form">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="0" max="120" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sex">Sex</label>
+                        <select id="sex" name="sex" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bmi">BMI (Body Mass Index)</label>
+                        <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
+                        <div class="helper-text">Normal range: 18.5 - 24.9</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children">Number of Children/Dependents</label>
+                        <input type="number" id="children" name="children" min="0" max="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="smoker">Smoker</label>
+                        <select id="smoker" name="smoker" required>
+                            <option value="">Select</option>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">Region</label>
+                        <select id="region" name="region" required>
+                            <option value="">Select</option>
+                            <option value="northeast">Northeast</option>
+                            <option value="northwest">Northwest</option>
+                            <option value="southeast">Southeast</option>
+                            <option value="southwest">Southwest</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model">Prediction Model</label>
+                        <select id="model" name="model">
+                            <option value="gradient_boosting">Gradient Boosting (Recommended)</option>
+                            <option value="random_forest">Random Forest</option>
+                            <option value="linear_regression">Linear Regression</option>
+                            <option value="ridge_regression">Ridge Regression</option>
+                            <option value="lasso_regression">Lasso Regression</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="primary-button">Predict Cost</button>
+                        <button type="reset" class="secondary-button">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="results-panel" id="results-panel">
+                <h2>Prediction Results</h2>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Calculating your insurance cost...</p>
+                </div>
+                <div id="results" class="hidden">
+                    <div class="result-card">
+                        <h3>Estimated Annual Insurance Cost</h3>
+                        <div class="cost" id="predicted-cost">$0.00</div>
+                        <div class="model-info">
+                            Model used: <span id="model-used">Gradient Boosting</span>
+                        </div>
+                    </div>
+                    <div class="result-factors">
+                        <h3>Key Factors Affecting Your Cost</h3>
+                        <ul id="factor-list">
+                            <!-- Will be filled by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div id="error-message" class="error hidden">
+                    An error occurred during prediction.
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a machine learning powered prediction tool. Results are estimates based on statistical models.</p>
+            <p>© 2025 Insurance Cost Predictor</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
