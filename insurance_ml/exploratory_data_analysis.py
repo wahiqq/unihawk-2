@@ -43,7 +43,7 @@ def explore_data(df):
     plt.title('Distribution of Insurance Charges')
     plt.xlabel('Charges')
     plt.ylabel('Frequency')
-    plt.savefig('insurance_ml/charges_distribution.png')
+    plt.savefig('charges_distribution.png')
     
     # Correlation between numerical features
     plt.figure(figsize=(10, 8))
@@ -52,7 +52,7 @@ def explore_data(df):
     sns.heatmap(correlation, annot=True, cmap='coolwarm')
     plt.title('Correlation Matrix')
     plt.tight_layout()
-    plt.savefig('insurance_ml/correlation_matrix.png')
+    plt.savefig('correlation_matrix.png')
     
     # Relationship between age and charges
     plt.figure(figsize=(10, 6))
@@ -60,7 +60,7 @@ def explore_data(df):
     plt.title('Age vs Charges')
     plt.xlabel('Age')
     plt.ylabel('Charges')
-    plt.savefig('insurance_ml/age_vs_charges.png')
+    plt.savefig('age_vs_charges.png')
     
     # Relationship between BMI and charges
     plt.figure(figsize=(10, 6))
@@ -68,33 +68,33 @@ def explore_data(df):
     plt.title('BMI vs Charges')
     plt.xlabel('BMI')
     plt.ylabel('Charges')
-    plt.savefig('insurance_ml/bmi_vs_charges.png')
+    plt.savefig('bmi_vs_charges.png')
     
     # Charges by smoker status
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='smoker', y='charges', data=df)
     plt.title('Charges by Smoker Status')
-    plt.savefig('insurance_ml/charges_by_smoker.png')
+    plt.savefig('charges_by_smoker.png')
     
     # Charges by region
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='region', y='charges', data=df)
     plt.title('Charges by Region')
-    plt.savefig('insurance_ml/charges_by_region.png')
+    plt.savefig('charges_by_region.png')
     
     # Charges by sex
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='sex', y='charges', data=df)
     plt.title('Charges by Sex')
-    plt.savefig('insurance_ml/charges_by_sex.png')
+    plt.savefig('charges_by_sex.png')
     
     # Charges by number of children
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='children', y='charges', data=df)
     plt.title('Charges by Number of Children')
-    plt.savefig('insurance_ml/charges_by_children.png')
+    plt.savefig('charges_by_children.png')
     
-    print("\nAnalysis complete! Visualizations saved in the insurance_ml directory.")
+    print("\nAnalysis complete! Visualizations saved in the current directory.")
 
 if __name__ == "__main__":
     df = load_data()
