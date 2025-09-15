@@ -45,13 +45,26 @@ insurance_ml/
    - matplotlib
    - seaborn
    - joblib
+   - flask
+   - flask-cors
 
-2. Run the main script:
+2. Run the main script to train the models:
    ```
    python insurance_ml/main.py
    ```
 
-3. To make predictions with a trained model:
+3. Start the API and web interface:
+   ```
+   python insurance_ml/api.py
+   ```
+   Or simply run the `start_api_server.bat` file.
+
+4. Open a web browser and navigate to:
+   ```
+   http://localhost:5000
+   ```
+
+5. To make predictions programmatically with a trained model:
    ```python
    from insurance_ml.prediction import predict_insurance_cost
    
