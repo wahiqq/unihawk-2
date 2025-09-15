@@ -23,6 +23,8 @@ insurance_ml/
 ├── model_training.py - Trains and evaluates various regression models
 ├── prediction.py - Contains function for making predictions with trained models
 ├── main.py - Runs the entire pipeline
+├── api.py - Flask API to serve the prediction model
+├── static/ - Frontend files (HTML, CSS, JavaScript)
 ├── README.md - This file
 ```
 
