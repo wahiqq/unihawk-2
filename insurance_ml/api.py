@@ -2,7 +2,7 @@
 API for Insurance Cost Prediction
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
 import sys
@@ -10,7 +10,7 @@ import joblib
 import pandas as pd
 from pathlib import Path
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='static')
 CORS(app)  # Enable CORS for all routes
 
 # Add the current directory to path to import the modules
